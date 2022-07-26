@@ -4,3 +4,5 @@ In this project, I have built a fire alarm using Arduino Uno which is interfaced
 **Android app controller**
 
 ![](firealarm.jpeg)
+
+You can view app UI design from [here](http://ai2.appinventor.mit.edu/#4841788188524544)
