@@ -1,0 +1,60 @@
+*Arduino Code*
+
+```
+#include <SoftwareSerial.h>
+#define flamepin 0
+#define buzzer 1
+#DEFINE LED 4
+#define rx, tx 2, 3
+const threshhold=10
+const flamevalue=0
+
+void loop()
+  
+  {
+  Serial.begin(9600);
+  pinMode(flamepin, INPUT):
+  pinMode(buzzer, OUTPUT),
+  
+  }
+  
+ void setup()
+ {
+  if(flamevalue>=threshold)
+      
+      
+      {
+        digitalWrite(buzzer, HIGH);
+        digitalWrite(LED, HIGH);
+        
+        print("Fire detected"\n);
+        
+        makeCall()
+        //Pin fire Location via an SMS
+        
+      }
+      
+      void makeCall()
+        {
+          SoftwareSerial mySerial(2,3);
+          Serial.begin(9600);
+          mySerial.begin(9600);
+          
+          Serial.println("Initializing...");
+            delay(1000);
+
+            mySerial.println("AT"); //Handshaking with SIM900
+            updateSerial();
+            mySerial.println("AT+CSQ"); //Signal quality test, value range is 0-31 , 31 is the best
+            updateSerial();
+            mySerial.println("AT+CCID"); //Read SIM information to confirm whether the SIM is plugged
+            updateSerial();
+            mySerial.println("AT+CREG?"); //Check whether it has registered in the network
+            updateSerial();
+
+        }
+      
+  }  
+  
+  
+```
